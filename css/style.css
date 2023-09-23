@@ -1,0 +1,162 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    /* height: 100vh; */
+    display: grid;
+    place-items: center;
+    background-color: #f5f5f5;
+    /* overflow: hidden; */
+}
+
+.gallrey{
+    width: 800px;
+}
+
+.gallrey h1{
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 40px;
+    margin: 10px auto;
+    color: #03A9F4;
+}
+
+.gallrey .btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.gallrey .btn button{
+    border: none;
+    padding: 10px 12px;
+    background-color: white;
+    text-transform: capitalize;
+    font-weight: bold;
+    border-radius: 4px;
+    transition: 0.3s linear;
+    cursor: pointer;
+}
+
+.gallrey .btn button:hover,
+.gallrey .btn button.active{
+    background-color: #03A9F4;
+    color: white;
+}
+
+.gallrey .imgs{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.gallrey .imgs .img{
+    flex-basis: 250px;
+    padding: 5px;
+    background-color: white;
+    border-radius: 4px;
+    box-shadow: 0 0 10px #ddd;
+    overflow: hidden;
+    transition: 1s linear;
+}
+
+.gallrey .imgs .img:hover img{
+    transform: rotate(5deg) scale(1.2);
+}
+
+.gallrey .imgs .img img{
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+@media (max-width: 991px) {
+    .gallrey{
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .gallrey .imgs{
+        justify-content: center;
+    }
+}
+
+
+.over-lay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99999;
+}
+
+.over-lay .img-card{
+    width: 500px;
+    background-color: white;
+    padding: 10px;
+}
+
+.over-lay .img-card h2{
+    margin: 0 0 15px;
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 30px;
+    color: #03A9F4;
+}
+
+
+.over-lay .img-card img{
+    width: 100%;
+    user-select: none;
+}
+
+.over-lay .close{
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    background-color: #d61a1a;
+    color: white;
+    padding: 10px 12px;
+    border-radius: 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.over-lay .close:hover{
+    background-color: red;
+}
+
+.over-lay .prev,
+.over-lay .next{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #009688;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.over-lay .prev{
+    left: 30px;
+}
+
+.over-lay .next{
+    right: 30px;
+    
+}
